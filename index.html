@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse | Your Digital Library</title>
+    
+    <!-- Modern dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Page Preloader -->
+<div class="preloader">
+    <div class="book-shelf">
+        <div class="loading-book"></div>
+        <div class="loading-book"></div>
+        <div class="loading-book"></div>
+        <div class="book-shelf-row"></div>
+        <div class="loading-text">LOADING</div>
+    </div>
+</div>
+
+    <!-- Modern Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <div class="logo">
+                    <i class="fas fa-book-reader"></i>
+                    <span>BookVerse</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="user-info">
+                    <div class="datetime-display">
+                        <i class="fas fa-clock"></i>
+                        <span class="time-display">2025-02-28 07:15:20</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="male-avatar">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="35" height="35" rx="8" fill="currentColor"/>
+                                <path d="M17.5 16C19.985 16 22 13.985 22 11.5C22 9.015 19.985 7 17.5 7C15.015 7 13 9.015 13 11.5C13 13.985 15.015 16 17.5 16ZM17.5 18.75C14.6663 18.75 9 20.1737 9 23V25C9 25.5523 9.44772 26 10 26H25C25.5523 26 26 25.5523 26 25V23C26 20.1737 20.3337 18.75 17.5 18.75Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="username">kingslayer458</span>
+                    </div>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Discover Your Next <span class="highlight">Adventure</span></h1>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for books, authors, or genres..." id="searchInput">
+                <button class="clear-btn" id="clearSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <button class="search-btn" onclick="searchBooks()">
+                <span>Search</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Reading Stats -->
+    <section class="stats-section">
+        <div class="stat-card">
+            <i class="fas fa-books"></i>
+            <h3>Books Found</h3>
+            <span class="stat-number" id="booksFound">0</span>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-star"></i>
+            <h3>Avg Rating</h3>
+            <span class="stat-number" id="avgRating">0.0</span>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-bookmark"></i>
+            <h3>Reading List</h3>
+            <span class="stat-number" id="readingListCount">0</span>
+        </div>
+    </section>
+
+    <!-- Results Grid -->
+    <main class="results-container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Books</button>
+            <button class="filter-btn" data-filter="fiction">Fiction</button>
+            <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
+            <button class="filter-btn" data-filter="science">Science</button>
+            <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+        </div>
+        
+        <div class="results-grid" id="results"></div>
+    </main>
+
+<!-- Replace your existing modal div with this -->
+<div class="modal" id="bookModal">
+    <div class="modal-content">
+        <button class="modal-close">×</button>
+        <div class="modal-body"></div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
